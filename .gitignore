@@ -111,3 +111,4 @@ dbconfig.py
 
 .DS_Store
 *.zip
+/www/.scannerwork

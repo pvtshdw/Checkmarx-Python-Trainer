@@ -24,6 +24,7 @@
       <li>{{ entry }}</li>
     {% else %}
       <li><em>Unpossible!  No users yet!</em></li>
+      <li>Here's the search text:<br/>{{ search | safe }}</li>
     {% endfor %}
   </div>
 </body>
