@@ -15,7 +15,7 @@ class DBHelper:
         try:
             with connection.cursor() as cursor:
                 cursor.execute(query)
-            return cursor.fetchall()
+                return cursor.fetchall()
         finally:
             connection.close()
     

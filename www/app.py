@@ -13,19 +13,15 @@ db = DBHelper()
 
 @app.route("/")
 def index():
-    # data = db.select("SELECT * FROM users ORDER BY id DESC")
-    # print(data)
     return render_template('index.html')
 
 
 @app.route("/finduser", methods=["GET"])
 def finduser():
-    print("[*] Find user")
-    print(request)
-    sql = "select * from users where user = '{0}'".format(request.args.get("user"))
-    print(sql)
+    search = request.args.get("user")
+    sql = "select * from users where user = '{0}'".format(search)
     data = db.select(sql)
-    return render_template('index.html', data=data)
+    return render_template('index.html', data=data, search=search)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
